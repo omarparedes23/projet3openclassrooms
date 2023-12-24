@@ -1,0 +1,262 @@
+/* ******* Body ******* */
+body
+{
+    font-family:'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* ******* Header ******* */
+header {
+    display: flex;
+    justify-content: space-around;
+    padding-top:15px;
+    padding-bottom: 15px;
+    padding-right:24%;
+    padding-left: 1px;
+}
+header i{
+    margin-top:40%;
+}
+header img {
+    width: 185px;
+    height: 30px;
+}
+/* ******* Main ******* */
+section img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+.menu {
+    background-color: #F2F2F2;
+    border-radius:39px 39px 0px 0px;
+    padding: 20px 4%;
+    position: relative;
+    top: -41px;
+    /*    margin-bottom: 0px;*/
+}
+.menu-titre {
+    display: flex;
+    justify-content: space-between;
+}
+.menu-titre h2 {
+    font-family:'Shrikhand';
+    font-size: 21px;
+}
+.menu-titre i {
+    margin-top: 20px;
+    margin-right: 25px;
+    font-size: 30px;
+}
+/* ******* Bouton "J’aime" en forme de coeur ******* */
+.solid {
+    position: relative;
+    z-index: 1;
+    height:28px;
+    padding: 0;
+}
+.solid__empty {
+    position: absolute;
+    top: -19px;
+    left: 0;
+    background-color: transparent;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s linear ,color 0.5s linear ;
+}
+.solid:hover {
+    color: #9356DC;
+    transition: color 0.5s ease-in-out ;
+  }
+.solid:hover  .solid__empty {
+        opacity: 1;
+        color:-webkit-linear-gradient(to top, #9356DC 50%, #FF79DA);
+}
+/* ******* Menu-conteneur ******* */
+.menu-conteneur h3 {
+    border-bottom: 3px solid  #99E2D0;
+    width: 15%;
+    font-weight: 290;
+}
+.entrees_premier {
+    background-color: white;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4%;
+    box-shadow:0px 5px 5px #e7e7e7;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.entrees_premier--titre {
+    flex: auto;
+    white-space: nowrap;
+	overflow: hidden;      
+}
+.entrees_premier--titre h4 {
+    margin-top:13px;
+}
+.entrees_premier--titre p {
+    margin-top:-16px;
+    margin-bottom: 20px;
+}
+.entrees_premier--titre h4, .entrees_premier--titre p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.entrees_premier--prix {
+    padding-top: 38px;
+    font-weight: bold;
+    margin-right: 0px;
+}
+@-moz-document url-prefix() {
+    .entrees_premier--prix {
+        padding-top: 23px;
+    }
+ }
+/* ******* Animation petite coche ******* */
+.choisir
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(35px); 
+    transition-duration: 1s;        
+    background-color: #99E2D0;
+    width: 0px;    
+}
+.choisir i
+{
+    color: #99E2D0;
+    background-color: white;
+    border-radius: 50%;
+}
+.entrees_premier:hover .choisir
+{
+    width: 25%;
+    transform: translateX(25%);
+} 
+.entrees_premier:hover .choisir i {
+    transform: rotate(360deg);
+    transition: transform 1s ease-in-out;
+}    
+/* ******* Bouton commander ******* */
+.commander {
+    background: linear-gradient(to top, #9356DC 50%, #FF79DA);
+    border-radius: 32px;
+    border: none;
+    color:white;
+    width: 45%;
+    height:60px;
+    margin: 5% 25% ;
+    box-shadow: 0 5px 10px rgb(188, 188, 188);
+    background-size: 1px 100px;
+    transform: scale(1);
+    transition-property: all;
+    transition-duration: 400ms;
+}
+.commander:hover {
+    opacity: 0.87;
+    box-shadow: 0 3px 10px rgb(86, 86, 86);
+}
+/* ******* Animation déplacer ******* */
+.elementpremier {
+    animation:deplacer 1s;
+}
+.elementdeuxieme {
+    animation:deplacer 3s;
+}
+.elementtroisieme {
+    animation:deplacer 5s;
+}
+.elementquatrieme {
+    animation:deplacer 7s;
+}
+@keyframes deplacer
+{
+    0% 
+    {
+        opacity: 0;
+        transform: translateY(25%);
+    }
+
+    25% 
+    {
+        opacity: 0;
+    }
+    30% 
+    {
+        opacity: 0;
+    }    
+
+    100% 
+    {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+/* ******* Footer ******* */
+footer {
+    background-color: #3b3939;
+    border:2px solid #3b3939;
+}
+footer p {
+    margin-left: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;    
+    color: white;
+    font-family:'Shrikhand', sans-serif;
+    font-size: 20px;
+}
+footer ul {
+    
+    list-style-type: none;
+}
+footer li {
+    margin-bottom: 7px;
+    margin-left: 0px;
+}
+footer a {
+    text-decoration: none;
+    color: white;
+}
+footer i {
+    color:white;
+}
+.fa-utensils {
+    margin-right: 10px;
+}
+.fa-hands-helping {
+    margin-right: 3px;
+}
+/* ******* Responsive Tablette Desktop ******* */
+@media only screen and (min-width: 768px) {
+    .commander {
+        width: 20%;
+        margin: 5% 35% ;
+    }
+    .menu-conteneur {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;        
+    }
+    .entrees {
+        width: 30%;
+        min-width:369px;
+   }
+   .entrees_premier {
+    height:100px;
+   }
+    footer p
+    {
+        margin-left: 39%;
+        margin-right: 39%;
+        font-size: 30px;
+    }    
+    footer ul {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;        
+    }            
+}
